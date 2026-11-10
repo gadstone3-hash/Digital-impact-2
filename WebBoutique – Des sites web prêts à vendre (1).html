@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebBoutique – Des sites web prêts à vendre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6fb;--surface:#fff;--ink:#12203a;--muted:#55627a;--accent:#2457f5;--sun:#ffc53d;--wa:#1a9d4f;--line:#d9e1ee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1626;--surface:#16213a;--ink:#eef2fb;--muted:#a3b0c9;--accent:#7a9bff;--line:#27345250;--wa:#2bc16a}}
+:root[data-theme="dark"]{--bg:#0e1626;--surface:#16213a;--ink:#eef2fb;--muted:#a3b0c9;--accent:#7a9bff;--line:#27345250;--wa:#2bc16a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font:800 22px "Bricolage Grotesque",sans-serif}
+.logo span{background:var(--sun);color:#12203a;padding:0 7px;border-radius:6px;margin-left:2px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;border:0;font-size:16px}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.hero{display:grid;gap:36px;padding:28px 0 56px;align-items:center}
+@media(min-width:800px){.hero{grid-template-columns:1.1fr .9fr}}
+h1{font-size:clamp(38px,8vw,66px);font-weight:800;letter-spacing:-.02em}
+h1 mark{background:var(--sun);color:#12203a;padding:0 .15em;border-radius:8px}
+.hero p{color:var(--muted);font-size:19px;max-width:30em;margin:18px 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.browser{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 50px -24px rgba(18,32,58,.45);overflow:hidden;transform:rotate(-2deg)}
+.bar{display:flex;gap:6px;padding:10px 14px;background:var(--line)}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--muted);opacity:.5}
+.screen{padding:18px;display:grid;gap:10px}
+.screen b{height:70px;border-radius:10px;background:var(--accent)}
+.screen em{height:12px;border-radius:6px;background:var(--line);width:80%}
+.screen em:nth-of-type(2){width:55%}
+.screen div{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.screen div u{height:56px;border-radius:8px;background:var(--sun);opacity:.85}
+.screen div u:nth-child(2){background:var(--wa)}
+.screen div u:nth-child(3){background:var(--ink);opacity:.8}
+section{padding:48px 0}
+h2{font-size:clamp(28px,5vw,40px);font-weight:800;margin-bottom:10px}
+.sub{color:var(--muted);margin:0 0 28px;max-width:34em}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(285px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:150px;position:relative;display:flex;align-items:flex-end;padding:14px;color:#fff;font:800 24px "Bricolage Grotesque",sans-serif}
+.thumb::after{content:"";position:absolute;right:14px;top:14px;width:44%;height:50%;border-radius:10px;background:rgba(255,255,255,.28)}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:21px}
+.card p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
+.card .btn{justify-content:center;margin-top:8px}
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sun);color:#12203a;font:800 18px "Bricolage Grotesque",sans-serif;margin-bottom:12px}
+.step h3{font-size:20px;margin-bottom:6px}
+.step p{margin:0;color:var(--muted);font-size:15.5px}
+.final{background:var(--accent);color:#fff;border-radius:26px;padding:40px 24px;text-align:center;margin:20px 0 60px}
+:root:not([data-theme="light"]) .final{color:#0e1626}
+.final p{max-width:30em;margin:10px auto 22px}
+.final .btn{background:#fff;color:#12203a}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:0 0 90px}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.float svg{width:30px;height:30px;fill:#fff}
+@media(prefers-reduced-motion:no-preference){.browser{animation:in .8s ease-out both}@keyframes in{from{opacity:0;transform:rotate(-2deg) translateY(24px)}}}
+.shots{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.shot{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.shot .hero2{height:170px;display:grid;place-items:center;color:#fff;text-align:center;padding:14px}
+.shot .hero2 strong{display:block;font:800 24px "Bricolage Grotesque",sans-serif}
+.shot .hero2 span{font-size:44px;letter-spacing:6px}
+.shot .menu{padding:14px 16px;display:grid;gap:8px;font-size:15px}
+.shot .menu p{margin:0;display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.shot .tag{display:block;text-align:center;background:var(--wa);color:#fff;font-weight:600;font-size:14px;padding:9px;margin:4px 16px 16px;border-radius:999px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">Web<span>Boutique</span></div>
+  <a class="btn" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20voudrais%20un%20site%20web." target="_blank" rel="noopener">WhatsApp</a>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>Un site web qui donne envie de <mark>vous contacter</mark>.</h1>
+    <p>Choisissez un modèle, dites-nous votre activité : nous personnalisons votre site et vous le livrons prêt à partager par lien.</p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20voudrais%20un%20site%20web." target="_blank" rel="noopener">Commander sur WhatsApp</a>
+      <a class="btn alt" href="#modeles">Voir les modèles</a>
+    </div>
+  </div>
+  <div class="browser" aria-hidden="true">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="screen"><b></b><em></em><em></em><div><u></u><u></u><u></u></div></div>
+  </div>
+</div>
+
+<section id="modeles">
+  <h2>Nos sites à vendre</h2>
+  <p class="sub">Chaque modèle est adapté à votre nom, vos couleurs, vos photos et vos prix.</p>
+  <div class="grid">
+    <article class="card"><div class="thumb" style="background:#d9531e">Restaurant</div><div class="body"><h3>Site de restaurant</h3><p>Menu, horaires, photos des plats et bouton de réservation par WhatsApp.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20site%20Restaurant.">Je le veux – 30 $</a></div></article>
+    <article class="card"><div class="thumb" style="background:#7b3fe4">Boutique</div><div class="body"><h3>Boutique en ligne</h3><p>Catalogue de produits, prix clairs et commande directe en un clic.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20site%20Boutique.">Je le veux – 30 $</a></div></article>
+    <article class="card"><div class="thumb" style="background:#d6336c">Beauté</div><div class="body"><h3>Salon de beauté</h3><p>Services, tarifs, galerie avant/après et prise de rendez-vous rapide.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20site%20Salon%20de%20beaut%C3%A9.">Je le veux – 30 $</a></div></article>
+    <article class="card"><div class="thumb" style="background:#0b8a7a">Entreprise</div><div class="body"><h3>Site d’entreprise</h3><p>Présentez vos services, vos réalisations et inspirez confiance à vos clients.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20site%20Entreprise.">Je le veux – 30 $</a></div></article>
+    <article class="card"><div class="thumb" style="background:#1f5fbf">École</div><div class="body"><h3>École ou église</h3><p>Actualités, événements, horaires et contact pour toute votre communauté.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20site%20%C3%89cole%20ou%20%C3%A9glise.">Je le veux – 30 $</a></div></article>
+    <article class="card"><div class="thumb" style="background:#12203a">Portfolio</div><div class="body"><h3>Portfolio personnel</h3><p>Montrez votre travail, votre parcours et recevez des propositions.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20site%20Portfolio.">Je le veux – 30 $</a></div></article>
+  </div>
+</section>
+
+<section>
+  <h2>Exemples de sites restaurant</h2>
+  <p class="sub">Voilà le genre de site que vos clients verront : plats, prix et réservation en un clic.</p>
+  <div class="shots">
+    <div class="shot"><div class="hero2" style="background:#b8431a"><div><span>🍗🍚🥗</span><strong>Chez Mama</strong>Cuisine maison</div></div><div class="menu"><p><span>Poulet braisé</span><b>8 $</b></p><p><span>Poisson grillé</span><b>10 $</b></p><p><span>Riz et haricots</span><b>4 $</b></p></div><span class="tag">Réserver sur WhatsApp</span></div>
+    <div class="shot"><div class="hero2" style="background:#1f6f4a"><div><span>🍕🍝🥤</span><strong>Le Coin Gourmand</strong>Pizzas et pâtes</div></div><div class="menu"><p><span>Pizza maison</span><b>9 $</b></p><p><span>Spaghetti</span><b>6 $</b></p><p><span>Jus frais</span><b>2 $</b></p></div><span class="tag">Commander sur WhatsApp</span></div>
+    <div class="shot"><div class="hero2" style="background:#3a2a6b"><div><span>🍔🍟🥤</span><strong>Burger Time</strong>Rapide et savoureux</div></div><div class="menu"><p><span>Burger double</span><b>7 $</b></p><p><span>Frites</span><b>3 $</b></p><p><span>Boisson</span><b>1 $</b></p></div><span class="tag">Commander sur WhatsApp</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Comment ça marche</h2>
+  <p class="sub">Trois étapes, tout par WhatsApp.</p>
+  <div class="steps">
+    <div class="step"><h3>Vous choisissez</h3><p>Sélectionnez le modèle qui ressemble à votre activité.</p></div>
+    <div class="step"><h3>Nous personnalisons</h3><p>Vous envoyez votre logo, vos photos et vos textes. Nous faisons le reste.</p></div>
+    <div class="step"><h3>Vous partagez le lien</h3><p>Votre site est en ligne : envoyez-le à vos clients et sur les réseaux.</p></div>
+  </div>
+</section>
+
+<div class="final">
+  <h2>Prêt à lancer votre site ?</h2>
+  <p>Écrivez-nous sur WhatsApp au 098 77 75 231 et recevez une réponse rapide.</p>
+  <a class="btn" target="_blank" rel="noopener" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20voudrais%20un%20site%20web.">Démarrer maintenant</a>
+</div>
+</main>
+<footer>© WebBoutique · WhatsApp 098 77 75 231</footer>
+</div>
+
+<a class="float" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp" href="https://wa.me/243987775231?text=Bonjour%2C%20je%20voudrais%20un%20site%20web.">
+<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.300 2.400 1.500.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.8-.1 1.200Z"/></svg>
+</a>
+</body>
+</html>
